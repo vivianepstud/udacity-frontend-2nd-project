@@ -60,16 +60,28 @@ section {
     position: relative;
     min-height: 80vh;
 }
+
+@media only screen and (min-width: 35em){
+
 .content-layout{
     display: grid;
     grid-template-columns: 15vw 82vw;
 
 }
-    
+}    
 
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+
+@media only screen and (min-width: 35em){
+   
+    .navigation-menu
+    {
+        position: sticky;
+        top: 2em;
+    }
+}
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -80,6 +92,15 @@ section {
     text-decoration: none;
     color: white;
 }
+
+.nav-unordered-list-item-link-active{
+    background: crimson;
+    text-decoration: underline;
+    font-weight: 900;
+    padding: 4px;
+    margin-left: -4px;
+}
+
 
 .navbar__menu li {
     display: inline-block;
@@ -203,9 +224,9 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+section.active-section {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 section.your-active-class .landing__container::before {
