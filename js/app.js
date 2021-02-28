@@ -133,11 +133,13 @@ window.addEventListener('load', () => {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5,
+    threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
   };
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      const position = entry.target.getBoundingClientRect();
+      const positionTop = position.top;
+      if (entry.isIntersecting && positionTop < 300 && positionTop > -300) {
         const currentActiveElement = document.querySelector('.active-section');
         const currentNavItem = document.querySelector(`a[data-section=${currentActiveElement.id}]`);
         if (currentActiveElement) {
